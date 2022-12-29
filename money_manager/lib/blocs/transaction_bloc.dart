@@ -7,7 +7,12 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
   final _transactionRepo = TransactionsRepository();
 
   TransactionBloc() : super(TransactionInitialState()) {
+    
     on<LoadTransactionEvent>(((event, emit) => emit(TransactionSuccessState(
         transactions: _transactionRepo.loadTransactions()))));
+
+    on<LoadRecentTransactionEvent>(((event, emit) => emit(
+        TransactionSuccessState(
+            transactions: _transactionRepo.loadRecentTransactions()))));
   }
 }

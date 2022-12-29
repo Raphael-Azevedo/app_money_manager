@@ -29,4 +29,11 @@ class TransactionsRepository {
 
     return _transactions;
   }
+
+  List<Transaction> loadRecentTransactions() {
+    loadTransactions();
+    return _transactions
+        .where((e) => e.date.month == DateTime.now().month)
+        .toList();
+  }
 }
