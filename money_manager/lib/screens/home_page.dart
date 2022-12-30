@@ -15,7 +15,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Despesas Pessoais'),
+      ),
       drawer: const Drawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -25,6 +27,12 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: const CircleBorder(),
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const BottomNavigation(),
     );
   }

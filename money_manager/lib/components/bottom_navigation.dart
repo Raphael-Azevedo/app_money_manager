@@ -23,10 +23,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.add_circle,
-          ),
-          label: 'Gastos',
+          icon: const Icon(Icons.home),
+          label: 'Home',
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
         BottomNavigationBarItem(
@@ -40,8 +38,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.home),
-          label: 'Home',
+          icon: const Icon(Icons.bar_chart_outlined),
+          label: 'Semanal',
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
       ],
