@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager/screens/home_page.dart';
+import 'package:money_manager/screens/transaction_page.dart';
 import 'package:money_manager/utils/app_routes.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
               secondary: const Color.fromRGBO(96, 126, 234, 100))),
       routes: {
         AppRoutes.home: ((ctx) => const HomePage()),
+        AppRoutes.transactions: ((ctx) => const TransactionPage()),
       },
       debugShowCheckedModeBanner: false,
     );

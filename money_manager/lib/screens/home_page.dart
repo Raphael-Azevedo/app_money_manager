@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../components/bottom_navigation.dart';
 import '../components/home_card.dart';
 import '../components/list_recent_transactions.dart';
+import '../utils/app_routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,8 +29,11 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushReplacementNamed(AppRoutes.transactions);
+        },
         shape: const CircleBorder(),
+        backgroundColor: Theme.of(context).colorScheme.primary,
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

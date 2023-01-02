@@ -104,12 +104,14 @@ class _HomeCardState extends State<HomeCard> {
                               color: Colors.white,
                             ),
                           ),
-                          subtitle: Text(
-                            valueEntrance.toStringAsFixed(2),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
+                          subtitle: FittedBox(
+                            child: Text(
+                              valueEntrance.toStringAsFixed(2),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),
@@ -128,12 +130,14 @@ class _HomeCardState extends State<HomeCard> {
                               color: Colors.white,
                             ),
                           ),
-                          subtitle: Text(
-                            valueCost.toStringAsFixed(2),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
+                          subtitle: FittedBox(
+                            child: Text(
+                              valueCost.toStringAsFixed(2),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager/utils/app_routes.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({
@@ -10,42 +11,51 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.home),
-          label: 'Home',
-          backgroundColor: Theme.of(context).colorScheme.primary,
+    return BottomAppBar(
+      shape: const CircularNotchedRectangle(),
+      color: Theme.of(context).colorScheme.primary,
+      child: IconTheme(
+        data: IconThemeData(
+          color: Theme.of(context).colorScheme.primary,
         ),
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.payment),
-          label: 'Cartões',
-          backgroundColor: Theme.of(context).colorScheme.primary,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed(AppRoutes.home);
+                },
+                icon: const Icon(Icons.home),
+                color: Colors.white,
+              ),
+              IconButton(
+                onPressed: () {
+                 
+                },
+                icon: const Icon(Icons.payment),
+                color: Colors.white,
+              ),
+              const SizedBox(
+                width: 24,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.pie_chart),
+                color: Colors.white,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.bar_chart_outlined),
+                color: Colors.white,
+              ),
+            ],
+          ),
         ),
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.pie_chart),
-          label: 'Estatísticas',
-          backgroundColor: Theme.of(context).colorScheme.primary,
-        ),
-        BottomNavigationBarItem(
-          icon: const Icon(Icons.bar_chart_outlined),
-          label: 'Semanal',
-          backgroundColor: Theme.of(context).colorScheme.primary,
-        ),
-      ],
-      currentIndex: _selectedIndex,
-      selectedItemColor: Colors.amber[800],
-      onTap: _onItemTapped,
+      ),
     );
   }
 }
